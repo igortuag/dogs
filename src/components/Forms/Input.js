@@ -2,11 +2,11 @@ import React from "react";
 
 import styles from "./Input.module.css";
 
-const Input = ({ label }) => {
+const Input = ({ label, type, name }) => {
   return (
     <div>
-      <label htmlFor="">{label}</label>
-      <input className={styles.button} />;
+      <label htmlFor={name}>{label}</label>
+      <input type={type} className={styles.button} name={name} id={name} />;
     </div>
   );
 };
