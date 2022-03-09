@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 
 const Login = () => {
@@ -25,7 +26,9 @@ const Login = () => {
   return (
     <div>
       <form action="" onSubmit={handleSubmit}>
-        <Input />
+        <Input label="Usuário" />
+
+        <Button>Entrar</Button>
       </form>
     </div>
   );
