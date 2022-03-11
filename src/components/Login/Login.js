@@ -1,36 +1,20 @@
 import React from "react";
-import Button from "../Forms/Button";
-import Input from "../Forms/Input";
+import { Routes, Route } from "react-router-dom";
+
+import LoginCreated from "./LoginCreated";
+import LoginForm from "./LoginForm";
+import LoginLostPassword from "./LoginLostPassword";
+import LoginResetPassword from "./LoginResetPassword";
 
 const Login = () => {
-  const [username, setUsername] = React.useState("");
-  const [password, setPassword] = React.useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ username, password }),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((json) => {
-        console.log(json);
-      });
-  };
-
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" />
-        <Input label="Senha" type="password" name="password" />
-
-        <Button>Entrar</Button>
-      </form>
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+        <Route path="create" element={<LoginCreated />} />
+        <Route path="lost-password" element={<LoginLostPassword />} />
+        <Route path="reset-password" element={<LoginResetPassword />} />
+      </Routes>
     </div>
   );
 };
