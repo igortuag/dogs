@@ -1,6 +1,8 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
+import LoginForm from "./LoginForm";
 
 const Login = () => {
   const [username, setUsername] = React.useState("");
@@ -25,6 +27,9 @@ const Login = () => {
 
   return (
     <div>
+      <Routes>
+        <Route path="/" element={<LoginForm />} />
+      </Routes>
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" />
         <Input label="Senha" type="password" name="password" />
