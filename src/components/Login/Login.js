@@ -5,6 +5,7 @@ import Input from "../Forms/Input";
 import LoginCreated from "./LoginCreated";
 import LoginForm from "./LoginForm";
 import LoginLostPassword from "./LoginLostPassword";
+import LoginResetPassword from "./LoginResetPassword";
 
 const Login = () => {
   const [username, setUsername] = React.useState("");
