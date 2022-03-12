@@ -1,0 +1,11 @@
+.button {
+  font-size: 1rem;
+  font-family: var(--type-first);
+  cursor: pointer;
+  border: none;
+  border-radius: 0.4rem;
+  background: #fb1;
+  color: #764701;
+  padding: 0.8rem 1.2rem;
+  box-sizing: border-box;
+}
