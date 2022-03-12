@@ -4,9 +4,12 @@ import styles from "./Input.module.css";
 
 const Input = ({ label, type, name }) => {
   return (
-    <div>
-      <label htmlFor={name}>{label}</label>
-      <input type={type} className={styles.button} name={name} id={name} />;
+    <div className={styles.wrapper}>
+      <label htmlFor={name} className={styles.label}>
+        {label}
+      </label>
+      <input type={type} className={styles.input} name={name} id={name} />
+      <p className={styles.error}>Error</p>
     </div>
   );
 };
