@@ -8,4 +8,12 @@
   color: #764701;
   padding: 0.8rem 1.2rem;
   box-sizing: border-box;
+  min-width: 8rem;
+  transition: all 0.1s ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #fea, 0 0 0 4px #fb1;
 }
