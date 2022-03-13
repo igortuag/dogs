@@ -5,7 +5,7 @@ import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 
 const LoginForm = () => {
-  const userName = useForm("email");
+  const userName = useForm();
   const password = useForm();
 
   const handleSubmit = (e) => {
