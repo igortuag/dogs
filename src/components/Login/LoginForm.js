@@ -10,19 +10,21 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      // body: JSON.stringify({ username, password }),
-    })
-      .then((response) => {
-        return response.json();
+    if (userName.validate() && password.validate()) {
+      fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        // body: JSON.stringify({ username, password }),
       })
-      .then((json) => {
-        console.log(json);
-      });
+        .then((response) => {
+          return response.json();
+        })
+        .then((json) => {
+          console.log(json);
+        });
+    }
   };
 
   return (
