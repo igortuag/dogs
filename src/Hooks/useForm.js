@@ -1,7 +1,12 @@
 import React from "react";
 
 const useForm = () => {
-  return <div>useForm</div>;
+  const [value, setValue] = React.useState("");
+
+  return {
+    value,
+    setValue,
+  };
 };
 
 export default useForm;
