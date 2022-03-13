@@ -15,7 +15,7 @@ const LoginForm = () => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ username, password }),
+      // body: JSON.stringify({ username, password }),
     })
       .then((response) => {
         return response.json();
@@ -31,7 +31,6 @@ const LoginForm = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...userName} />
         <Input label="Senha" type="password" name="password" {...password} />
-
         <Button>Entrar</Button>
       </form>
       <Link to="/login/create">Cadastro</Link>
