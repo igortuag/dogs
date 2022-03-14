@@ -9,6 +9,13 @@ const LoginForm = () => {
   const userName = useForm();
   const password = useForm();
 
+  React.useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      getUser(token);
+    }
+  }, []);
+
   async function getUser(token) {
     const { url } = USER_GET(token);
 
