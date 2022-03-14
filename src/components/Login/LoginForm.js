@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { TOKEN_POST } from "../../api";
+import { TOKEN_POST, USER_GET } from "../../api";
 import useForm from "../../Hooks/useForm";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
@@ -8,6 +8,15 @@ import Input from "../Forms/Input";
 const LoginForm = () => {
   const userName = useForm();
   const password = useForm();
+
+  async function getUser(token) {
+    const { url } = USER_GET(token);
+
+    const response = await fetch(url);
+    const json = await response.json();
+
+    console.log(json);
+  }
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -21,6 +30,7 @@ const LoginForm = () => {
       const json = await response.json();
 
       window.localStorage.setItem("token", json.token);
+      getUser(json.token);
     }
   }
 
