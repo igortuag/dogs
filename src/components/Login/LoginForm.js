@@ -9,7 +9,7 @@ const LoginForm = () => {
   const userName = useForm();
   const password = useForm();
 
-  const handleSubmit = (e) => {
+  async function handleSubmit(e) {
     e.preventDefault();
     if (userName.validate() && password.validate()) {
       const { url, options } = TOKEN_POST({
@@ -17,15 +17,11 @@ const LoginForm = () => {
         password: password.value,
       });
 
-      fetch(url, options)
-        .then((response) => {
-          return response.json();
-        })
-        .then((json) => {
-          console.log(json);
-        });
+      const response = await fetch(url, options);
+      const json = await response.json();
+      console.log(json);
     }
-  };
+  }
 
   return (
     <section>
