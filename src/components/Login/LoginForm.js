@@ -17,9 +17,9 @@ const LoginForm = () => {
   }, []);
 
   async function getUser(token) {
-    const { url } = USER_GET(token);
+    const { url, options } = USER_GET(token);
 
-    const response = await fetch(url);
+    const response = await fetch(url, options);
     const json = await response.json();
 
     console.log(json);
