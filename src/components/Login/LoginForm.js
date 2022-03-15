@@ -2,12 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { TOKEN_POST, USER_GET } from "../../api";
 import useForm from "../../Hooks/useForm";
+import { UserContext } from "../../UserContext";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 
 const LoginForm = () => {
   const userName = useForm();
   const password = useForm();
+  const { user } = React.useContext(UserContext);
 
   React.useEffect(() => {
     const token = localStorage.getItem("token");
@@ -43,6 +45,7 @@ const LoginForm = () => {
 
   return (
     <section>
+      {user}
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...userName} />
