@@ -16,6 +16,7 @@ export const UserStorage = ({ children }) => {
     const json = await response.json();
 
     setData(json);
+    setLogin(true);
   }
 
   async function userLogin(username, password) {
@@ -32,7 +33,7 @@ export const UserStorage = ({ children }) => {
   }
 
   return (
-    <UserContext.Provider value={{ user: "Tuag" }}>
+    <UserContext.Provider value={{ userLogin }}>
       {children}
     </UserContext.Provider>
   );
