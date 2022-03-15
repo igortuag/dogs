@@ -10,13 +10,6 @@ const LoginForm = () => {
   const password = useForm();
   const { userLogin } = React.useContext(UserContext);
 
-  React.useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      // getUser(token);
-    }
-  }, []);
-
   async function handleSubmit(e) {
     e.preventDefault();
     if (userName.validate() && password.validate()) {

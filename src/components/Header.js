@@ -6,17 +6,24 @@ import { ReactComponent as Dogs } from "../Assets/dogs.svg";
 import { UserContext } from "../UserContext";
 
 const Header = () => {
-  const { user } = React.useContext(UserContext);
+  const { data } = React.useContext(UserContext);
+  console.log("DaTAA:>>", data);
+
   return (
     <header className={styles.header}>
       <nav className={`${styles.nav} container`}>
         <Link className={styles.logo} to="/" aria-label="Dogs - Home">
           <Dogs />
         </Link>
-        <Link className={styles.login} to="/login">
-          {user}
-          Login / Criar
-        </Link>
+        {data.nome ? (
+          <Link className={styles.login} to="/conta">
+            {data.nome}
+          </Link>
+        ) : (
+          <Link className={styles.login} to="/login">
+            Login / Criar
+          </Link>
+        )}
       </nav>
     </header>
   );

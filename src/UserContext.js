@@ -33,7 +33,7 @@ export const UserStorage = ({ children }) => {
   }
 
   return (
-    <UserContext.Provider value={{ userLogin }}>
+    <UserContext.Provider value={{ userLogin, data }}>
       {children}
     </UserContext.Provider>
   );
