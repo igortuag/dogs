@@ -39,7 +39,6 @@ const useForm = (type) => {
     error,
     validate: () => validate(value),
     onBlur: () => {
-      console.log("entrou aqui");
       validate(value);
     },
   };
