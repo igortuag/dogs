@@ -52,13 +52,15 @@ export const UserStorage = ({ children }) => {
 
       const response = await fetch(url, options);
       const { token, ok, statusText } = await response.json();
-      if (!ok) throw new Error(`Error: ${statusText}`);
+      if (!ok) throw new Error(`Error: Usuário invalido`);
 
       window.localStorage.setItem("token", token);
-      getUser(token);
+      await getUser(token);
     } catch (error) {
       setError(error.message);
+      setLogin(false);
     } finally {
+      setLoading(false);
     }
   }
 
@@ -71,7 +73,9 @@ export const UserStorage = ({ children }) => {
   }
 
   return (
-    <UserContext.Provider value={{ userLogin, data, userLogout }}>
+    <UserContext.Provider
+      value={{ userLogin, data, userLogout, error, loading, login }}
+    >
       {children}
     </UserContext.Provider>
   );
