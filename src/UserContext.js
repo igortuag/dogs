@@ -1,5 +1,5 @@
 import React from "react";
-import { TOKEN_POST, USER_GET } from "./api";
+import { TOKEN_POST, TOKEN_VALIDATE_POST, USER_GET } from "./api";
 
 export const UserContext = React.createContext();
 
@@ -30,6 +30,7 @@ export const UserStorage = ({ children }) => {
 
     autoLogin();
   }, []);
+
   async function getUser(token) {
     const { url, options } = USER_GET(token);
 
@@ -53,8 +54,16 @@ export const UserStorage = ({ children }) => {
     getUser(token);
   }
 
+  async function userLogout() {
+    setData(null);
+    setError(null);
+    setLoading(false);
+    setLogin(false);
+    window.localStorage.removeItem("token");
+  }
+
   return (
-    <UserContext.Provider value={{ userLogin, data }}>
+    <UserContext.Provider value={{ userLogin, data, userLogout }}>
       {children}
     </UserContext.Provider>
   );
