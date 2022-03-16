@@ -21,7 +21,6 @@ export const UserStorage = ({ children }) => {
           const response = await fetch(url, options);
           if (!response.ok) throw new Error("Token inválido");
           await getUser(token);
-          navigate("/conta");
         } catch (error) {
           userLogout();
         } finally {
@@ -53,11 +52,12 @@ export const UserStorage = ({ children }) => {
       });
 
       const response = await fetch(url, options);
-      const { token, ok, statusText } = await response.json();
-      if (!ok) throw new Error(`Error: Usuário invalido`);
+      const { token, message } = await response.json();
+      if (!token) throw new Error(message);
 
       window.localStorage.setItem("token", token);
       await getUser(token);
+      navigate("/conta");
     } catch (error) {
       setError(error.message);
       setLogin(false);

@@ -26,7 +26,7 @@ const LoginForm = () => {
         <Button disabled={loading}>
           {loading ? "Carregando..." : "Entrar"}
         </Button>
-        {error && <p>{error}</p>}
+        {error && <p dangerouslySetInnerHTML={{ __html: error }} />}
       </form>
       <Link to="/login/create">Cadastro</Link>
     </section>
