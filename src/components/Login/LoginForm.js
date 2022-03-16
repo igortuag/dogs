@@ -23,7 +23,9 @@ const LoginForm = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...userName} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button disabled={loading}>Entrar</Button>
+        <Button disabled={loading}>
+          {loading ? "Carregando..." : "Entrar"}
+        </Button>
         {error && <p>{error}</p>}
       </form>
       <Link to="/login/create">Cadastro</Link>
