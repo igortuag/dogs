@@ -4,6 +4,7 @@ import useForm from "../../Hooks/useForm";
 import { UserContext } from "../../UserContext";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
+import Error from "../Helper/Error";
 
 const LoginForm = () => {
   const userName = useForm();
@@ -26,7 +27,7 @@ const LoginForm = () => {
         <Button disabled={loading}>
           {loading ? "Carregando..." : "Entrar"}
         </Button>
-        {error && <p dangerouslySetInnerHTML={{ __html: error }} />}
+        <Error error={error} />
       </form>
       <Link to="/login/create">Cadastro</Link>
     </section>
