@@ -34,7 +34,7 @@ const LoginForm = () => {
         Perdeu a senha?
       </Link>
       <div className={styles.register}>
-        <h2> className={styles.subtitle}Cadastro</h2>
+        <h2 className={styles.subtitle}> Cadastro</h2>
         <p>Aioda não possui conta? Cadastre-se no site</p>
         <Link className={styles.buttonCreate} to="/login/register">
           Cadastre-se
