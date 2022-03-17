@@ -10,6 +10,8 @@
   box-sizing: border-box;
   min-width: 8rem;
   transition: all 0.1s ease-in-out;
+  display: block;
+  width: fit-content;
 }
 
 .button:hover,
