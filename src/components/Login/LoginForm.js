@@ -6,6 +6,7 @@ import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import Error from "../Helper/Error";
 import styles from "./LoginForm.module.css";
+import stylesBtn from "../Forms/Button.module.css";
 
 const LoginForm = () => {
   const userName = useForm();
@@ -40,7 +41,9 @@ const LoginForm = () => {
           Cadastre-se
         </Link>
       </div>
-      <Link to="/login/create">Cadastro</Link>
+      <Link to="/login/create" className={stylesBtn.button}>
+        Cadastro
+      </Link>
     </section>
   );
 };
