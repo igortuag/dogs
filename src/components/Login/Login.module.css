@@ -11,3 +11,8 @@
   background: url("../../Assets/login.jpg") no-repeat center center;
   background-size: cover;
 }
+
+.forms {
+  max-width: 30rem;
+  padding: 2rem;
+}
