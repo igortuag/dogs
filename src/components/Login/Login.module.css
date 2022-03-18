@@ -4,3 +4,10 @@
   min-height: 100vh;
   gap: 2rem;
 }
+
+.login::before {
+  display: block;
+  content: "";
+  background: url("../../Assets/login.jpg") no-repeat center center;
+  background-size: cover;
+}
