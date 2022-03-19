@@ -26,9 +26,7 @@ const LoginForm = () => {
       <form className={styles.form} onSubmit={handleSubmit}>
         <Input label="Usuário" type="text" name="username" {...userName} />
         <Input label="Senha" type="password" name="password" {...password} />
-        <Button disabled={loading}>
-          {loading ? "Carregando..." : "Entrar"}
-        </Button>
+        <Button disabled={loading}>{loading ? "Carregando..." : "Entrar"}</Button>
         <Error error={error} />
       </form>
       <Link className={styles.lost} to="/login/lost-password">
@@ -37,11 +35,11 @@ const LoginForm = () => {
       <div className={styles.register}>
         <h2 className={styles.subtitle}> Cadastro</h2>
         <p>Aioda não possui conta? Cadastre-se no site</p>
-        <Link className={styles.buttonCreate} to="/login/register">
+        <Link className={styles.buttonCreate} to="/login/lost">
           Cadastre-se
         </Link>
       </div>
-      <Link to="/login/create" className={stylesBtn.button}>
+      <Link to="/login/register" className={stylesBtn.button}>
         Cadastro
       </Link>
     </section>
