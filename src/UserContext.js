@@ -35,7 +35,7 @@ export const UserStorage = ({ children }) => {
 
       window.localStorage.setItem("token", token);
       await getUser(token);
-      navigate("/conta");
+      navigate("/user");
     } catch (error) {
       setError(error.message);
       setLogin(false);
@@ -69,6 +69,8 @@ export const UserStorage = ({ children }) => {
         } finally {
           setLoading(false);
         }
+      } else {
+        setLogin(false);
       }
     }
 
@@ -76,9 +78,7 @@ export const UserStorage = ({ children }) => {
   }, [userLogout]);
 
   return (
-    <UserContext.Provider
-      value={{ userLogin, data, userLogout, error, loading, login }}
-    >
+    <UserContext.Provider value={{ userLogin, data, userLogout, error, loading, login }}>
       {children}
     </UserContext.Provider>
   );

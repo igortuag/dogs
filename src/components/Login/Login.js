@@ -12,7 +12,7 @@ const Login = () => {
   const { login } = React.useContext(UserContext);
 
   if (login) {
-    <Navigate to="/conta" />;
+    <Navigate to="/user" />;
   }
 
   return (
