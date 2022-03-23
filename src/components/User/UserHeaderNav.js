@@ -1,10 +1,14 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 const UserHeaderNav = () => {
   return (
-    <div>
-      <h1>UserHeaderNav</h1>
-    </div>
+    <nav>
+      <NavLink to="/user">Minhas Fotos</NavLink>
+      <NavLink to="/user/stats">Estatísticas</NavLink>
+      <NavLink to="/user/post">Adicionar Foto</NavLink>
+      <button>Sair</button>
+    </nav>
   );
 };
 
