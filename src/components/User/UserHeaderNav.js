@@ -9,23 +9,25 @@ import styles from "./UserHeaderNav.module.css";
 
 const UserHeaderNav = () => {
   const { userLogout } = React.useContext(UserContext);
+  const [mobile, setMobile] = React.useState(false);
 
   return (
     <nav className={styles.nav}>
       <NavLink to="/user">
-        <Feed /> Minhas Fotos
+        <Feed />
+        {mobile && "Minhas Fotos"}
       </NavLink>
       <NavLink to="/user/stats">
         <Stats />
-        Estatísticas
+        {mobile && "Estatísticas"}
       </NavLink>
       <NavLink to="/user/post">
         <Add />
-        Adicionar Foto
+        {mobile && "Adicionar Foto"}
       </NavLink>
       <button onClick={userLogout}>
         <Logout />
-        Sair
+        {mobile && "Sair"}
       </button>
     </nav>
   );
