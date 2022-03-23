@@ -4,6 +4,8 @@ import { UserContext } from "../../UserContext";
 import Feed from "../Feed/Feed";
 
 import UserHeader from "./UserHeader";
+import UserPhotoPost from "./UserPhotoPost";
+import UserStats from "./UserStats";
 
 const User = () => {
   const { login } = React.useContext(UserContext);
@@ -17,6 +19,8 @@ const User = () => {
       <UserHeader />
       <Routes>
         <Route path="/" element={<Feed />} />
+        <Route path="/post" element={<UserPhotoPost />} />
+        <Route path="/statistic" element={<UserStats />} />
       </Routes>
     </section>
   );
