@@ -1,10 +1,13 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import { UserContext } from "../../UserContext";
+import Feed from "../Feed/Feed";
 
-import styles from "./User.module.css";
+import UserHeader from "./UserHeader";
+import UserPhotoPost from "./UserPhotoPost";
+import UserStats from "./UserStats";
 
-const Login = () => {
+const User = () => {
   const { login } = React.useContext(UserContext);
 
   if (login) {
@@ -12,14 +15,15 @@ const Login = () => {
   }
 
   return (
-    <div className={styles.login}>
-      <div className={styles.forms}>
-        <Routes>
-          <Route path="/" element={<div>bla</div>} />
-        </Routes>
-      </div>
-    </div>
+    <section className="container">
+      <UserHeader />
+      <Routes>
+        <Route path="/" element={<Feed />} />
+        <Route path="/post" element={<UserPhotoPost />} />
+        <Route path="/stats" element={<UserStats />} />
+      </Routes>
+    </section>
   );
 };
 
-export default Login;
+export default User;
