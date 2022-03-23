@@ -3,3 +3,15 @@
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
+
+.nav a,
+.nav button {
+  background: #eee;
+  border-radius: 0.2rem;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+}
