@@ -1,10 +1,10 @@
 import React from "react";
-import { Routes, Route, Navigate } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import { UserContext } from "../../UserContext";
 
-import styles from "./User.module.css";
+import UserHeader from "./UserHeader";
 
-const Login = () => {
+const User = () => {
   const { login } = React.useContext(UserContext);
 
   if (login) {
@@ -12,14 +12,10 @@ const Login = () => {
   }
 
   return (
-    <div className={styles.login}>
-      <div className={styles.forms}>
-        <Routes>
-          <Route path="/" element={<div>bla</div>} />
-        </Routes>
-      </div>
-    </div>
+    <section className="container">
+      <UserHeader />
+    </section>
   );
 };
 
-export default Login;
+export default User;
