@@ -13,15 +13,15 @@ const UserHeaderNav = () => {
 
   return (
     <nav className={styles.nav}>
-      <NavLink to="/user">
+      <NavLink to="/user" end activeClassName={styles.active}>
         <Feed />
         {mobile && "Minhas Fotos"}
       </NavLink>
-      <NavLink to="/user/stats">
+      <NavLink to="/user/stats" activeClassName={styles.active}>
         <Stats />
         {mobile && "Estatísticas"}
       </NavLink>
-      <NavLink to="/user/post">
+      <NavLink to="/user/post" activeClassName={styles.active}>
         <Add />
         {mobile && "Adicionar Foto"}
       </NavLink>
