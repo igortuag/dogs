@@ -14,4 +14,16 @@
   justify-content: center;
   align-items: center;
   border: 1px solid transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.nav a:hover,
+.nav a:focus,
+.nav button:hover,
+.nav button:focus {
+  background: white;
+  box-shadow: 0 0 0 3px #eee;
+  border-color: #eee;
+  outline: none;
 }
