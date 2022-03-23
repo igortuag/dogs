@@ -5,12 +5,13 @@ import { ReactComponent as Feed } from "../../Assets/feed.svg";
 import { ReactComponent as Stats } from "../../Assets/estatisticas.svg";
 import { ReactComponent as Add } from "../../Assets/adicionar.svg";
 import { ReactComponent as Logout } from "../../Assets/sair.svg";
+import styles from "./UserHeaderNav.module.css";
 
 const UserHeaderNav = () => {
   const { userLogout } = React.useContext(UserContext);
 
   return (
-    <nav>
+    <nav className={styles.nav}>
       <NavLink to="/user">
         <Feed /> Minhas Fotos
       </NavLink>
