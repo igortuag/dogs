@@ -61,3 +61,12 @@
   border-radius: 2px;
   box-shadow: 0 6px currentColor, 0 -6px currentColor;
 }
+
+.mobileMenu:focus,
+.mobileMenu:hover {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px #fea;
+  border-color: #fb1;
+  color: #fb1;
+}
