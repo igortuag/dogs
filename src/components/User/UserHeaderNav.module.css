@@ -37,3 +37,17 @@
 .nav a.active svg > * {
   fill: #fb1;
 }
+
+.mobileMenu {
+  background: #eee;
+  border-radius: 0.2rem;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
