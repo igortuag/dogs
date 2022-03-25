@@ -37,3 +37,36 @@
 .nav a.active svg > * {
   fill: #fb1;
 }
+
+.mobileMenu {
+  background: #eee;
+  border-radius: 0.2rem;
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.mobileMenu::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+}
+
+.mobileMenu:focus,
+.mobileMenu:hover {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px #fea;
+  border-color: #fb1;
+  color: #fb1;
+}
