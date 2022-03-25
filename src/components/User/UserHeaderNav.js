@@ -15,7 +15,7 @@ const UserHeaderNav = () => {
 
   return (
     <>
-      <button aria-label="menu" onClick={() => setMobileMenu(!mobileMenu)}></button>
+      {mobile && <button aria-label="menu" onClick={() => setMobileMenu(!mobileMenu)}></button>}
       <nav className={styles.nav}>
         <NavLink to="/user" end activeClassName={styles.active}>
           <Feed />
