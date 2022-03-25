@@ -9,9 +9,9 @@ const UseMedia = (media) => {
     }
     window.addEventListener("resize", changeMatch);
     return () => window.removeEventListener("resize", changeMatch);
-  }, []);
+  }, [media]);
 
-  return <div></div>;
+  return match;
 };
 
 export default UseMedia;
