@@ -51,3 +51,13 @@
   transition: 0.1s;
   cursor: pointer;
 }
+
+.mobileMenu::after {
+  content: "";
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  box-shadow: 0 6px currentColor, 0 -6px currentColor;
+}
