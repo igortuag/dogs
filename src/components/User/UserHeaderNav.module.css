@@ -92,6 +92,7 @@
   transform: translateX(-10px);
   opacity: 0;
   transition: 0.2s;
+  pointer-events: none;
 }
 
 .navMobile a,
@@ -124,4 +125,5 @@
   transform: initial;
   opacity: 1;
   z-index: 100;
+  pointer-events: initial;
 }
