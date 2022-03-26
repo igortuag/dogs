@@ -79,3 +79,11 @@
   height: 4px;
   box-shadow: 0 8px currentColor, 0 -8px currentColor;
 }
+
+.navMobile {
+  display: none;
+}
+
+.navMobileActive {
+  display: block;
+}
