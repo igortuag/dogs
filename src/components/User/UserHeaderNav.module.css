@@ -38,7 +38,7 @@
   fill: #fb1;
 }
 
-.mobileMenu {
+.mobileButton {
   background: #eee;
   border-radius: 0.2rem;
   height: 40px;
@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 
-.mobileMenu::after {
+.mobileButton::after {
   content: "";
   display: block;
   width: 1.2rem;
@@ -62,11 +62,19 @@
   box-shadow: 0 6px currentColor, 0 -6px currentColor;
 }
 
-.mobileMenu:focus,
-.mobileMenu:hover {
+.mobileButton:focus,
+.mobileButton:hover,
+.mobileButtonActive {
   outline: none;
   background: white;
   box-shadow: 0 0 0 3px #fea;
   border-color: #fb1;
   color: #fb1;
+}
+
+.mobileButtonActive::after {
+  transform: rotate(90deg);
+  width: 4px;
+  height: 4px;
+  box-shadow: 0 8px currentColor, 0 -8px currentColor;
 }
