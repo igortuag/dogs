@@ -3,19 +3,34 @@ import styles from "./UserPhotoPost.module.css";
 import Input from "../Forms/Input";
 import Button from "../Forms/Button";
 import useForm from "../../Hooks/useForm";
+import useFetch from "../../Hooks/useFetch";
+import { PHOTO_POST } from "../../api";
 
 const UserPhotoPost = () => {
   const nome = useForm();
   const peso = useForm("number");
   const idade = useForm("number");
   const [img, setImg] = React.useState("");
+  const { data, error, loading, request } = useFetch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const formData = new FormData();
+    formData.append("img", img.raw);
+    formData.append("nome", nome.value);
+    formData.append("peso", peso.value);
+    formData.append("idade", idade.value);
+
+    const token = window.localStorage.getItem("token");
+    const { url, options } = PHOTO_POST(formData, token);
+
+    request(url, options);
   };
 
-  const handleImgChange = (e) => {
-    setImg(e.target.files[0]);
+  const handleImgChange = ({ target }) => {
+    setImg({
+      raw: target.files[0],
+    });
   };
 
   return (
