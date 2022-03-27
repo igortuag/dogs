@@ -11,6 +11,10 @@ const types = {
     message:
       "Preencha uma senha válida, com no mínimo 8 caracteres, com no mínimo uma letra maiúscula, uma letra minúscula, um número e um caractere especial.",
   },
+  number: {
+    regex: /^[0-9]+$/,
+    message: "Preencha um número válido",
+  },
 };
 
 const useForm = (type) => {

@@ -15,6 +15,7 @@ export const UserStorage = ({ children }) => {
 
     const response = await fetch(url, options);
     const json = await response.json();
+    navigate("/user");
 
     setData(json);
     setLogin(true);
@@ -51,7 +52,7 @@ export const UserStorage = ({ children }) => {
     setLogin(false);
     window.localStorage.removeItem("token");
     navigate("/login");
-  }, [navigate]);
+  }, []);
 
   React.useEffect(() => {
     async function autoLogin() {
@@ -64,7 +65,6 @@ export const UserStorage = ({ children }) => {
           const response = await fetch(url, options);
           if (!response.ok) throw new Error("Token inválido");
           await getUser(token);
-          navigate("/user");
         } catch (error) {
           userLogout();
         } finally {
