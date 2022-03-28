@@ -5,6 +5,8 @@ import Button from "../Forms/Button";
 import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
 import { PHOTO_POST } from "../../api";
+import Error from "../Helper/Error";
+import { useNavigate } from "react-router-dom";
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -12,6 +14,13 @@ const UserPhotoPost = () => {
   const idade = useForm("number");
   const [img, setImg] = React.useState("");
   const { data, error, loading, request } = useFetch();
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (data) {
+      navigate("/user");
+    }
+  }, [data, navigate]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +38,7 @@ const UserPhotoPost = () => {
 
   const handleImgChange = ({ target }) => {
     setImg({
+      preview: URL.createObjectURL(target.files[0]),
       raw: target.files[0],
     });
   };
@@ -39,9 +49,30 @@ const UserPhotoPost = () => {
         <Input label="Nome" type="text" name="nome" {...nome} />
         <Input label="Peso" type="number" name="peso" {...peso} />
         <Input label="Idade" type="number" name="idade" {...idade} />
-        <input type="file" name="img" id="img" onChange={handleImgChange} />
-        <Button>Enviar</Button>
+        <input
+          className={styles.file}
+          type="file"
+          name="img"
+          id="img"
+          onChange={handleImgChange}
+        />
+        {loading ? (
+          <Button disabled>Enviando...</Button>
+        ) : (
+          <Button>Enviar</Button>
+        )}
+        <Error error={error} />
       </form>
+      <div>
+        {img?.preview && (
+          <div
+            src={img.preview}
+            alt="Preview"
+            className={styles.preview}
+            style={{ backgroundImage: `url(${img.preview})` }}
+          />
+        )}
+      </div>
     </section>
   );
 };
