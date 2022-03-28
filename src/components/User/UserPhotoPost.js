@@ -5,6 +5,7 @@ import Button from "../Forms/Button";
 import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
 import { PHOTO_POST } from "../../api";
+import Error from "../Helper/Error";
 
 const UserPhotoPost = () => {
   const nome = useForm();
@@ -52,6 +53,7 @@ const UserPhotoPost = () => {
         ) : (
           <Button>Enviar</Button>
         )}
+        <Error error={error} />
       </form>
       <div>
         {img?.preview && (
