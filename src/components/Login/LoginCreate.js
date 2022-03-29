@@ -1,6 +1,6 @@
 import React from "react";
 import { USER_POST } from "../../api";
-import useFetch from "../../Hooks/useFetch,js";
+import useFetch from "../../Hooks/useFetch.js";
 import useForm from "../../Hooks/useForm";
 import { UserContext } from "../../UserContext";
 import Button from "../Forms/Button";
@@ -35,7 +35,11 @@ const LoginCreate = () => {
         <Input label="E-mail" type="email" name="email" {...email} />
         <Input label="Senha" type="password" name="password" {...password} />
 
-        {loading ? <Button disabled>Cadastrando...</Button> : <Button>Cadastrar</Button>}
+        {loading ? (
+          <Button disabled>Cadastrando...</Button>
+        ) : (
+          <Button>Cadastrar</Button>
+        )}
 
         <Error error={error} />
       </form>
