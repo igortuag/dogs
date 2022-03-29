@@ -1,7 +1,8 @@
 import React from "react";
+import FeedPhotosItem from "./FeedPhotosItem";
 
 function FeedPhotos() {
-  return <div>FeedPhotos</div>;
+  return <FeedPhotosItem />;
 }
 
 export default FeedPhotos;
