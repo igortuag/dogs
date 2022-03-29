@@ -16,7 +16,7 @@ function FeedPhotos() {
 
       const { response, json } = await request(url, options);
 
-      console.log("response ::>>", response);
+      console.log("json ::>>", json);
     }
     fetchPhotos();
   }, [request]);
