@@ -2,6 +2,7 @@ import React from "react";
 import FeedPhotosItem from "./FeedPhotosItem";
 import useFetch from "../../Hooks/useFetch";
 import { PHOTOS_GET } from "../../api";
+import Error from "../Helper/Error";
 
 function FeedPhotos() {
   const { data, loading, error, request } = useFetch();
@@ -20,6 +21,8 @@ function FeedPhotos() {
     }
     fetchPhotos();
   }, [request]);
+
+  if (error) return <Error error={error} />;
 
   return <FeedPhotosItem />;
 }
