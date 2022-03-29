@@ -27,7 +27,16 @@ function FeedPhotos() {
 
   if (loading) return <Loading />;
 
-  return <FeedPhotosItem />;
+  if (data)
+    return (
+      <ul>
+        {data.map((photo) => (
+          <FeedPhotosItem key={photo.id} photo={photo} />
+        ))}
+      </ul>
+    );
+
+  return null;
 }
 
 export default FeedPhotos;
