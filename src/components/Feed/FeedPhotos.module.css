@@ -5,3 +5,9 @@
   margin-bottom: 1rem;
   justify-items: center;
 }
+
+@media (max-width: 40rem) {
+  .feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
