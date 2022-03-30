@@ -9,3 +9,10 @@
     grid-row: initial;
   }
 }
+
+.photo {
+  display: grid;
+  border-radius: 0.2rem;
+  overflow: hidden;
+  cursor: pointer;
+}
