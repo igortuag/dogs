@@ -1,6 +1,6 @@
 import React from "react";
 
-import styles from "./FeedPhotos.module.css";
+import styles from "./FeedPhotosItem.module.css";
 
 function FeedPhotosItem({ photo }) {
   return (
