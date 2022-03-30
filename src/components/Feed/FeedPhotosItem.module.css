@@ -23,4 +23,12 @@
 
 .photo span {
   grid-area: 1/1;
+  background: rgba(0, 0, 0, 0.3);
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  display: none;
 }
