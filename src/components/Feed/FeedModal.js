@@ -1,7 +1,8 @@
 import React from "react";
+import styles from "./FeedModal.module.css";
 
 function FeedModal() {
-  return <div>FeedModal</div>;
+  return <div className={styles.modal}>FeedModal</div>;
 }
 
 export default FeedModal;
