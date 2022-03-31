@@ -14,7 +14,11 @@ function PhotoContent({ data }) {
         <div>
           <p>
             <Link to={`/profile/${photo.author}`}>@{photo.author}</Link>
+            <span className={styles.view}>{photo.acessos}</span>
           </p>
+          <h1 className="title">
+            <Link to={`/photo/${photo.id}`}>{photo.title}</Link>
+          </h1>
         </div>
       </div>
     </div>
