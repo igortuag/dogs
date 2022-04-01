@@ -51,3 +51,7 @@
   justify-content: space-between;
   align-items: center;
 }
+
+.author a:hover {
+  text-decoration: underline;
+}
