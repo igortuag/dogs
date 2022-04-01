@@ -43,3 +43,11 @@
     grid-row: 1;
   }
 }
+
+.author {
+  opacity: 0.5;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
