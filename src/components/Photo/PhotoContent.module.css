@@ -16,3 +16,7 @@
 .img {
   grid-row: 1/4;
 }
+
+.comments {
+  padding: 0 2rem;
+}
