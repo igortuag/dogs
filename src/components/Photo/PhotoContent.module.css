@@ -1,0 +1,10 @@
+.photo {
+  margin: auto;
+  height: 36rem;
+  border-radius: 0.2rem;
+  background: white;
+  display: grid;
+  grid-template-columns: 36rem 20rem;
+  grid-template-rows: auto 1fr auto;
+  overflow: hidden;
+}
