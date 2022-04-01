@@ -8,3 +8,11 @@
   grid-template-rows: auto 1fr auto;
   overflow: hidden;
 }
+
+.details {
+  padding: 2rem 2rem 0 2rem;
+}
+
+.img {
+  grid-row: 1/4;
+}
