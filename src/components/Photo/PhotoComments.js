@@ -17,7 +17,7 @@ function PhotoComments({ id, comments }) {
           </li>
         ))}
       </ul>
-      {login && <PhotoCommentsForm id={id} />}
+      {login && <PhotoCommentsForm id={id} setComments={setComments} />}
     </>
   );
 }
