@@ -1,4 +1,5 @@
 import React from "react";
+import { ReactComponent as Enviar } from "../../Assets/enviar.svg";
 
 function PhotoCommentsForm({ id }) {
   const [comment, setComment] = React.useState("");
@@ -11,6 +12,9 @@ function PhotoCommentsForm({ id }) {
         value={comment}
         onChange={({ target }) => setComment(target.value)}
       />
+      <button>
+        <Enviar />
+      </button>
     </form>
   );
 }
