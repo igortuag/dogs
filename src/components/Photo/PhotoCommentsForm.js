@@ -2,6 +2,7 @@ import React from "react";
 import { COMMENT_POST } from "../../api";
 import { ReactComponent as Enviar } from "../../Assets/enviar.svg";
 import useFetch from "../../Hooks/useFetch";
+import Error from "../Helper/Error";
 
 function PhotoCommentsForm({ id, setComments }) {
   const { request, error } = useFetch();
@@ -31,6 +32,7 @@ function PhotoCommentsForm({ id, setComments }) {
       <button>
         <Enviar />
       </button>
+      <Error error={error} />
     </form>
   );
 }
