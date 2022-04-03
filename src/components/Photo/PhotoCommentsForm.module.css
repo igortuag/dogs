@@ -24,3 +24,13 @@
   background: #fff;
   box-shadow: 0 0 0 3px #fea;
 }
+
+.button {
+  border: none;
+  cursor: pointer;
+  color: #333;
+  background: transparent;
+  font-size: 1rem;
+  padding: 0 1rem;
+  overflow: hidden;
+}
