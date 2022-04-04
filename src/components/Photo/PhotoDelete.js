@@ -19,9 +19,15 @@ function PhotoDelete({ id }) {
 
   return (
     <div>
-      <button onClick={handleClick} className={styles.delete}>
-        Deletar
-      </button>
+      {loading ? (
+        <button disabled className={styles.delete}>
+          Deletar
+        </button>
+      ) : (
+        <button onClick={handleClick} className={styles.delete}>
+          Deletar
+        </button>
+      )}
     </div>
   );
 }
