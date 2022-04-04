@@ -18,7 +18,7 @@ function PhotoDelete({ id }) {
   }
 
   return (
-    <div>
+    <>
       {loading ? (
         <button disabled className={styles.delete}>
           Deletar
@@ -28,7 +28,7 @@ function PhotoDelete({ id }) {
           Deletar
         </button>
       )}
-    </div>
+    </>
   );
 }
 
