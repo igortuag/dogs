@@ -6,12 +6,14 @@ import styles from "./PhotoComments.module.css";
 function PhotoDelete({ id }) {
   const { loading, request } = useFetch();
 
-  async function handleClick(e) {
-    e.preventDefault();
-    const { url, options } = PHOTO_DELETE(id);
-    const { response } = await request(url, options);
-    if (response.ok) {
-      window.location.reload();
+  async function handleClick() {
+    const confirm = window.confirm("Tem certeza que deseja deletar?");
+    if (confirm) {
+      const { url, options } = PHOTO_DELETE(id);
+      const { response } = await request(url, options);
+      if (response.ok) {
+        window.location.reload();
+      }
     }
   }
 
