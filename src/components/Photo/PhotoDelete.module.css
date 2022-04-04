@@ -9,3 +9,11 @@
   border-radius: 0.4rem;
   transition: 0.1s;
 }
+
+.delete:focus,
+.delete:hover {
+  outline: none;
+  background: white;
+  box-shadow: 0 0 0 3px #eee;
+  border-color: #333;
+}
