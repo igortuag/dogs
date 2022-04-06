@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./Loading.module.css";
 
-function Loading() {
+const Loading = () => {
   const [step, setStep] = React.useState(0);
 
   React.useEffect(() => {
@@ -105,6 +105,6 @@ function Loading() {
       </div>
     </div>
   );
-}
+};
 
 export default Loading;
