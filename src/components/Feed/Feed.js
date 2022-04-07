@@ -24,7 +24,8 @@ const Feed = ({ user }) => {
       {modalPhoto && (
         <FeedModal setModalPhoto={setModalPhoto} photo={modalPhoto} />
       )}
-      <FeedPhotos user={user} setModalPhoto={setModalPhoto} />
+      <FeedPhotos user={user} page="1" setModalPhoto={setModalPhoto} />
+      <FeedPhotos user={user} page="2" setModalPhoto={setModalPhoto} />
     </div>
   );
 };
