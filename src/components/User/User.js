@@ -8,12 +8,6 @@ import UserPhotoPost from "./UserPhotoPost";
 import UserStats from "./UserStats";
 
 const User = () => {
-  const { login } = React.useContext(UserContext);
-
-  if (login) {
-    <Navigate to="/user" />;
-  }
-
   return (
     <section className="container">
       <UserHeader />
