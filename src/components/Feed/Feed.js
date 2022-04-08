@@ -8,10 +8,12 @@ const Feed = ({ user }) => {
 
   React.useEffect(() => {
     function infiniteScroll(event) {
+      let wait = false;
       const scroll = window.scrollY;
       const height = document.body.offsetHeight - window.innerHeight;
-      if (scroll > height * 0.75) {
+      if (scroll > height * 0.75 && !wait) {
         setPages((prev) => [...prev, prev.length + 1]);
+        wait = true;
       }
     }
 
