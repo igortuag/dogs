@@ -8,7 +8,11 @@ const Feed = ({ user }) => {
 
   React.useEffect(() => {
     function infiniteScroll(event) {
-      console.log(event);
+      const scroll = window.scrollY;
+      const height = document.body.offsetHeight - window.innerHeight;
+      if (scroll > height * 0.75) {
+        setPages((prev) => [...prev, prev.length + 1]);
+      }
     }
 
     window.addEventListener("wheel", infiniteScroll);
