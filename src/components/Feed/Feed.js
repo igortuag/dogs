@@ -14,6 +14,9 @@ const Feed = ({ user }) => {
       if (scroll > height * 0.75 && !wait) {
         setPages((prev) => [...prev, prev.length + 1]);
         wait = true;
+        setTimeout(() => {
+          wait = false;
+        }, 500);
       }
     }
 
