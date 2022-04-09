@@ -24,7 +24,7 @@ const UserStats = () => {
   if (data) {
     return (
       <div>
-        <UserStatsGraphs />
+        <UserStatsGraphs data={data} />
       </div>
     );
   }
