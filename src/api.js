@@ -109,7 +109,7 @@ export function PHOTO_DELETE(id) {
   };
 }
 
-export function GET_STATS() {
+export function STATS_GET() {
   return {
     url: `${API_URL}/api/stats`,
     options: {
