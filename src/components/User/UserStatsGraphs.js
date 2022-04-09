@@ -5,7 +5,17 @@ function UserStatsGraphs({ data }) {
   const [graph, setGraph] = React.useState([]);
   const [total, setTotal] = React.useState(0);
 
-  return <section className="animeLeft">UserStatsGraphs</section>;
+  React.useEffect(() => {
+    setTotal(data.reduce((a, b) => a + b.acessos, 0));
+  }, [data]);
+
+  return (
+    <section className={`${styles.graph} animeLeft`}>
+      <div className={styles.total}>
+        <p>Acessos: {total}</p>
+      </div>
+    </section>
+  );
 }
 
 export default UserStatsGraphs;
