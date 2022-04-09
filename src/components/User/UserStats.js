@@ -2,7 +2,8 @@ import React from "react";
 import { STATS_GET } from "../../api";
 
 import useFetch from "../../hooks/useFetch";
-import Loading from "../../components/Loading";
+import Loading from "../../components/Helper/Loading";
+import Error from "../../components/Helper/Error";
 
 const UserStats = () => {
   const { data, error, loading, request } = useFetch();
@@ -16,6 +17,8 @@ const UserStats = () => {
   }, [request]);
 
   if (loading) return <Loading />;
+
+  if (error) return <Error />;
 
   return (
     <div>
