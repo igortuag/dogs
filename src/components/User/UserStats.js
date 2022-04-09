@@ -4,6 +4,7 @@ import { STATS_GET } from "../../api";
 import useFetch from "../../hooks/useFetch";
 import Loading from "../../components/Helper/Loading";
 import Error from "../../components/Helper/Error";
+import UserStatsGraphs from "./UserStatsGraphs";
 
 const UserStats = () => {
   const { data, error, loading, request } = useFetch();
@@ -20,11 +21,15 @@ const UserStats = () => {
 
   if (error) return <Error />;
 
-  return (
-    <div>
-      <h1>UserStats</h1>
-    </div>
-  );
+  if (data) {
+    return (
+      <div>
+        <UserStatsGraphs />
+      </div>
+    );
+  }
+
+  return null;
 };
 
 export default UserStats;
