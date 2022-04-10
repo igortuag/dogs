@@ -4,6 +4,7 @@ import { PHOTO_GET } from "../../api";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../Helper/Error";
 import Loading from "../Helper/Loading";
+import PhotoContent from "./PhotoContent";
 
 function Photo() {
   const { id } = useParams();
@@ -18,7 +19,9 @@ function Photo() {
 
   if (loading) return <Loading />;
 
-  return <div>{id}</div>;
+  if (data) return <PhotoContent photo={data} />;
+
+  return null;
 }
 
 export default Photo;
