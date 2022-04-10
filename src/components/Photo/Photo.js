@@ -19,7 +19,12 @@ function Photo() {
 
   if (loading) return <Loading />;
 
-  if (data) return <PhotoContent photo={data} />;
+  if (data)
+    return (
+      <section className="container mainContainer">
+        <PhotoContent photo={data} />
+      </section>
+    );
 
   return null;
 }
