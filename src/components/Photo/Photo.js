@@ -22,7 +22,7 @@ function Photo() {
   if (data)
     return (
       <section className="container mainContainer">
-        <PhotoContent photo={data} />
+        <PhotoContent photo={data} single />
       </section>
     );
 
