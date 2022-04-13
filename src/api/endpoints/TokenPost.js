@@ -19,11 +19,9 @@ const TokenPost = () => {
       }),
     })
       .then((response) => {
-        console.log(response);
         return response.json();
       })
       .then((json) => {
-        console.log(json);
         setToken(json.token);
         return json;
       });
@@ -31,7 +29,12 @@ const TokenPost = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="username" type="text" value={username} onChange={({ target }) => setUsername(target.value)} />
+      <input
+        placeholder="username"
+        type="text"
+        value={username}
+        onChange={({ target }) => setUsername(target.value)}
+      />
       <input
         placeholder="password"
         type="password"
@@ -39,7 +42,7 @@ const TokenPost = () => {
         onChange={({ target }) => setPassword(target.value)}
       />
       <button>Enviar</button>
-      <p style={{wordBreak: "break-all"}}>{token}</p>
+      <p style={{ wordBreak: "break-all" }}>{token}</p>
     </form>
   );
 };

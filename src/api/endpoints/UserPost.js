@@ -16,21 +16,31 @@ const UserPost = () => {
       body: JSON.stringify({
         username,
         password,
-        email, 
+        email,
       }),
-    }).then(response => {
-      console.log(response)
-      return response.json()
-    }).then(json => {
-      console.log(json)
-      return json
-    });
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {
+        return json;
+      });
   }
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="username" type="text" value={username} onChange={({ target }) => setUsername(target.value)} />
-      <input placeholder="email" type="email" value={email} onChange={({ target }) => setEmail(target.value)} />
+      <input
+        placeholder="username"
+        type="text"
+        value={username}
+        onChange={({ target }) => setUsername(target.value)}
+      />
+      <input
+        placeholder="email"
+        type="email"
+        value={email}
+        onChange={({ target }) => setEmail(target.value)}
+      />
       <input
         placeholder="password"
         type="password"
