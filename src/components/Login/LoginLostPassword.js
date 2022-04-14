@@ -24,7 +24,11 @@ const LoginLostPassword = () => {
       <h1 className="title">Perdeu a senha?</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Email / Usuário" type="text" name="email" {...login} />
-        <Button type="submit">Enviar Email</Button>
+        {loading ? (
+          <Button disabled>Enviando...</Button>
+        ) : (
+          <Button type="submit">Enviar Email</Button>
+        )}
       </form>
     </section>
   );
