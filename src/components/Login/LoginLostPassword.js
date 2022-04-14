@@ -13,11 +13,13 @@ const LoginLostPassword = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const { url, options } = PASSWORD_LOST({
-      login: login.value,
-      url: window.location.href.replace("forgot", "resetar"),
-    });
-    request(url, options);
+    if (login.validate()) {
+      const { url, options } = PASSWORD_LOST({
+        login: login.value,
+        url: window.location.href.replace("forgot", "resetar"),
+      });
+      request(url, options);
+    }
   };
 
   return (
