@@ -4,6 +4,7 @@ import Button from "../Forms/Button";
 import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
 import { PASSWORD_LOST } from "../../api";
+import Error from "../Helper/Error";
 
 const LoginLostPassword = () => {
   const login = useForm("");
@@ -30,6 +31,7 @@ const LoginLostPassword = () => {
           <Button type="submit">Enviar Email</Button>
         )}
       </form>
+      <Error error={error} />
     </section>
   );
 };
