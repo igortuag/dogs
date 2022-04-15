@@ -16,7 +16,7 @@ const LoginLostPassword = () => {
     if (login.validate()) {
       const { url, options } = PASSWORD_LOST({
         login: login.value,
-        url: window.location.href.replace("forgot", "resetar"),
+        url: window.location.href.replace("lost-password", "reset-password"),
       });
       request(url, options);
     }
