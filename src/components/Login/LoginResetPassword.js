@@ -4,6 +4,7 @@ import Input from "../Forms/Input";
 import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
 import { PASSWORD_RESET } from "../../api";
+import Error from "../Helper/Error";
 
 const LoginResetPassword = () => {
   const [login, setLogin] = React.useState("");
@@ -50,6 +51,7 @@ const LoginResetPassword = () => {
           <Button type="submit">Resetar</Button>
         )}
       </form>
+      <Error error={error} />
     </div>
   );
 };
