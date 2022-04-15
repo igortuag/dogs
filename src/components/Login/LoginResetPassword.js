@@ -5,12 +5,14 @@ import useForm from "../../Hooks/useForm";
 import useFetch from "../../Hooks/useFetch";
 import { PASSWORD_RESET } from "../../api";
 import Error from "../Helper/Error";
+import { useNavigate } from "react-router-dom";
 
 const LoginResetPassword = () => {
   const [login, setLogin] = React.useState("");
   const [key, setKey] = React.useState("");
   const password = useForm();
   const { data, loading, error, request } = useFetch();
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -31,7 +33,10 @@ const LoginResetPassword = () => {
         key,
         password: password.value,
       });
-      await request(url, options);
+      const { response } = await request(url, options);
+      if (response.ok) {
+        navigate("/login");
+      }
     }
   };
 
