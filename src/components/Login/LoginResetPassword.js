@@ -21,7 +21,7 @@ const LoginResetPassword = () => {
     }
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (password.validate()) {
@@ -30,7 +30,7 @@ const LoginResetPassword = () => {
         key,
         password: password.value,
       });
-      request(url, options);
+      await request(url, options);
     }
   };
 
@@ -44,6 +44,11 @@ const LoginResetPassword = () => {
           {...password}
         />
         <Button>Resetar</Button>
+        {loading ? (
+          <Button disabled>Resetando...</Button>
+        ) : (
+          <Button type="submit">Resetar</Button>
+        )}
       </form>
     </div>
   );
