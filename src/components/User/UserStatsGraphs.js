@@ -39,6 +39,11 @@ function UserStatsGraphs({ data }) {
           }}
         />
       </div>
+      <div>
+        <VictoryChart>
+          <VictoryBar alignment="start" data={graph} />
+        </VictoryChart>
+      </div>
     </section>
   );
 }
