@@ -18,10 +18,10 @@ function UserStatsGraphs({ data }) {
 
   return (
     <section className={`${styles.graph} animeLeft`}>
-      <div className={styles.total}>
+      <div className={`${styles.total} ${styles.graphItem}`}>
         <p>Acessos: {total}</p>
       </div>
-      <div>
+      <div className={styles.graphItem}>
         <VictoryPie
           data={graph}
           innerRadius={50}
@@ -39,7 +39,7 @@ function UserStatsGraphs({ data }) {
           }}
         />
       </div>
-      <div>
+      <div className={styles.graphItem}>
         <VictoryChart>
           <VictoryBar alignment="start" data={graph} />
         </VictoryChart>
