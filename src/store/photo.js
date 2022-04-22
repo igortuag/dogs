@@ -21,3 +21,31 @@ const initialState = {
   error: null,
   data: null,
 };
+
+export default function photo(state = initialState, action) {
+  switch (action.type) {
+    case FETCH_PHOTO_STARTED:
+      return {
+        ...state,
+        loading: true,
+        data: null,
+        error: null,
+      };
+    case FETCH_PHOTO_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        data: action.payload,
+        error: null,
+      };
+    case FETCH_PHOTO_ERROR:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+        data: null,
+      };
+    default:
+      return state;
+  }
+}
