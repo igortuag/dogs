@@ -1,7 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { PHOTO_GET } from "../../api";
 import { fetchPhoto } from "../../store/photo";
 import Error from "../Helper/Error";
 import Head from "../Helper/Head";
@@ -25,7 +24,7 @@ function Photo() {
     return (
       <section className="container mainContainer">
         <Head title={data.photo.title} />
-        <PhotoContent photo={data} single />
+        <PhotoContent single />
       </section>
     );
 
