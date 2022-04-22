@@ -6,12 +6,18 @@ const fetchPhotoStarted = () => ({
   type: FETCH_PHOTO_STARTED,
 });
 
-const fetchPhotoSuccess = (photo) => ({
+const fetchPhotoSuccess = (data) => ({
   type: FETCH_PHOTO_SUCCESS,
-  payload: photo,
+  payload: data,
 });
 
 const fetchPhotoError = (error) => ({
   type: FETCH_PHOTO_ERROR,
   payload: error,
 });
+
+const initialState = {
+  loading: false,
+  error: null,
+  data: null,
+};
