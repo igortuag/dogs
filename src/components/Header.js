@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 
 import styles from "./Header.module.css";
 import { ReactComponent as Dogs } from "../Assets/dogs.svg";
-import { UserContext } from "../UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
-  const { data } = React.useContext(UserContext);
+  const { data } = useSelector((state) => state.user);
 
   return (
     <header className={styles.header}>
