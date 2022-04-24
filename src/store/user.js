@@ -1,6 +1,6 @@
 import { USER_GET } from "../api";
 import createAsyncSlice from "./helper/createAsyncSlice";
-import { fetchToken } from "./token";
+import { fetchToken, resetTokenState } from "./token";
 
 const slice = createAsyncSlice({
   name: "token",
