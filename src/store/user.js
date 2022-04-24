@@ -14,4 +14,10 @@ export const userLogin = (user) => async (dispatch) => {
   if (payload.token) await dispatch(fetchUser(payload.token));
 };
 
+export const userLogout = () => async (dispatch) => {
+  dispatch(resetUserState());
+  dispatch(resetTokenState());
+  window.localStorage.removeItem("token");
+};
+
 export default slice.reducer;
