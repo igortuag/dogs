@@ -30,4 +30,11 @@ export const userLogout = () => async (dispatch) => {
   window.localStorage.removeItem("token");
 };
 
+export const autoLogin = () => async (dispatch, getState) => {
+  const { token } = getState();
+  if (token?.data?.token) {
+    await dispatch(fetchUser(token.data.token));
+  }
+};
+
 export default slice.reducer;
