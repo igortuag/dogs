@@ -5,13 +5,20 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Login from "./components/Login/Login";
 import User from "./components/User/User.js";
-import { UserStorage } from "./UserContext";
-import ProtectedRoute from "./components/Helper/ProtectedRoute";
 import Photo from "./components/Photo/Photo";
 import UserProfile from "./components/User/UserProfile";
 import NotFound from "./components/NotFound";
+import { useDispatch } from "react-redux";
+import { autoLogin } from "./store/user";
+import React from "react";
 
 function App() {
+  const dispatch = useDispatch();
+
+  React.useEffect(() => {
+    dispatch(autoLogin());
+  }, [dispatch]);
+
   return (
     <div className="App">
       <BrowserRouter>
