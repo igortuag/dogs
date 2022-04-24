@@ -5,6 +5,11 @@ import { fetchToken, resetTokenState } from "./token";
 const slice = createAsyncSlice({
   name: "token",
   fetchConfig: (token) => USER_GET(token),
+  initialState: {
+    data: {
+      token: window.localStorage.getItem("token") || null,
+    },
+  },
 });
 
 export const fetchUser = slice.asyncAction;
