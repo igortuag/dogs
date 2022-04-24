@@ -9,6 +9,8 @@ const slice = createAsyncSlice({
 
 export const fetchUser = slice.asyncAction;
 
+const { resetState: resetUserState } = slice.actions;
+
 export const userLogin = (user) => async (dispatch) => {
   const { payload } = await dispatch(fetchToken(user));
   if (payload.token) await dispatch(fetchUser(payload.token));
