@@ -14,7 +14,7 @@ const slice = createAsyncSlice({
 
 export const fetchUser = slice.asyncAction;
 
-const { resetState: resetUserState } = slice.actions;
+const { resetState: resetUserState, fetchError } = slice.actions;
 
 export const userLogin = (user) => async (dispatch) => {
   const { payload } = await dispatch(fetchToken(user));
@@ -33,7 +33,8 @@ export const userLogout = () => async (dispatch) => {
 export const autoLogin = () => async (dispatch, getState) => {
   const { token } = getState();
   if (token?.data?.token) {
-    await dispatch(fetchUser(token.data.token));
+    const { type } = await dispatch(fetchUser(token.data.token));
+    if (type === fetchError.type) dispatch(userLogout());
   }
 };
 
