@@ -1,14 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { UserContext } from "../../UserContext";
 import Image from "../Helper/Image";
 import PhotoComments from "./PhotoComments";
 import styles from "./PhotoContent.module.css";
 import PhotoDelete from "./PhotoDelete";
 
 function PhotoContent({ single }) {
-  const user = React.useContext(UserContext);
+  const { data } = useSelector((state) => state.user);
   const { photo, comments } = useSelector((state) => state.photo.data);
 
   return (
@@ -19,7 +18,7 @@ function PhotoContent({ single }) {
       <div className={styles.details}>
         <div>
           <p className={styles.author}>
-            {user?.data?.name === photo.author ? (
+            {data?.name === photo.author ? (
               <PhotoDelete id={photo.id} />
             ) : (
               <Link to={`/profile/${photo.author}`}>@{photo.author}</Link>

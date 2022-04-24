@@ -1,8 +1,9 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { USER_POST } from "../../api";
 import useFetch from "../../Hooks/useFetch.js";
 import useForm from "../../Hooks/useForm";
-import { UserContext } from "../../UserContext";
+import { userLogin } from "../../store/user";
 import Button from "../Forms/Button";
 import Input from "../Forms/Input";
 import Error from "../Helper/Error";
@@ -12,8 +13,7 @@ const LoginCreate = () => {
   const userName = useForm();
   const email = useForm("email");
   const password = useForm("password");
-
-  const { userLogin } = React.useContext(UserContext);
+  const dispatch = useDispatch();
   const { loading, error, request } = useFetch();
 
   async function handleSubmit(e) {
@@ -25,7 +25,10 @@ const LoginCreate = () => {
     });
 
     const { response } = await request(url, options);
-    if (response.ok) userLogin(userName.value, password.value);
+    if (response.ok)
+      dispatch(
+        userLogin({ userName: userName.value, password: password.value })
+      );
   }
 
   return (
