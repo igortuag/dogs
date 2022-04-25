@@ -29,5 +29,6 @@ const slice = creatAsyncSlice({
 });
 
 export const fetchFeed = slice.asyncAction;
+export const { addPhotos, addPage, resetState: resetFeedState } = slice.actions;
 
 export default slice.reducer;
