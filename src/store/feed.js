@@ -31,4 +31,15 @@ const slice = creatAsyncSlice({
 export const fetchFeed = slice.asyncAction;
 export const { addPhotos, addPage, resetState: resetFeedState } = slice.actions;
 
+export const loadNewPhotos =
+  ({ total = 6, user }) =>
+  async (dispatch, getState) => {
+    const { feed } = getState();
+    dispatch(addPage());
+    const { payload } = await dispatch(
+      fetchFeed({ page: feed.pages, total, user })
+    );
+    dispatch(addPhotos(payload));
+  };
+
 export default slice.reducer;
