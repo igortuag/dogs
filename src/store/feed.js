@@ -15,5 +15,13 @@ const slice = creatAsyncSlice({
     addPage(state) {
       state.pages++;
     },
+    resetState(state) {
+      state.infinite = true;
+      state.pages = 1;
+      state.list = [];
+      state.data = null;
+      state.error = null;
+      state.loading = false;
+    },
   },
 });
