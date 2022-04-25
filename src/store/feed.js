@@ -1,3 +1,4 @@
+import { PHOTOS_GET } from "../api";
 import creatAsyncSlice from "./helper/createAsyncSlice";
 
 const slice = creatAsyncSlice({
@@ -24,4 +25,5 @@ const slice = creatAsyncSlice({
       state.loading = false;
     },
   },
+  fetchConfig: ({ page, total, user }) => PHOTOS_GET({ page, total, user }),
 });
