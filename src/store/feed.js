@@ -27,3 +27,7 @@ const slice = creatAsyncSlice({
   },
   fetchConfig: ({ page, total, user }) => PHOTOS_GET({ page, total, user }),
 });
+
+export const fetchFeed = slice.asyncAction;
+
+export default slice.reducer;
