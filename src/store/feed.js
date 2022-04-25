@@ -12,5 +12,8 @@ const slice = creatAsyncSlice({
       state.list.push(...action.payload);
       if (action.payload) state.infinite = false;
     },
+    addPage(state) {
+      state.pages++;
+    },
   },
 });
