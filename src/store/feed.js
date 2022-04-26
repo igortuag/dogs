@@ -11,7 +11,7 @@ const slice = creatAsyncSlice({
   reducers: {
     addPhotos(state, action) {
       state.list.push(...action.payload);
-      if (action.payload) state.infinite = false;
+      if (action.payload.length === 0) state.infinite = false;
     },
     addPage(state) {
       state.pages++;
