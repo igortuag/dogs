@@ -14,6 +14,9 @@ const Feed = ({ user }) => {
 
   React.useEffect(() => {
     dispatch(loadNewPhotos({ user, total: 6 }));
+  }, [dispatch, user]);
+
+  React.useEffect(() => {
     function infiniteScroll() {
       if (infinite) {
         let wait = false;
