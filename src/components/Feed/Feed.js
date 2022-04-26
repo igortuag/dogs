@@ -4,6 +4,8 @@ import FeedPhotos from "./FeedPhotos";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { loadNewPhotos } from "../../store/feed";
+import Loading from "../Helper/Loading";
+import Error from "../Helper/Error";
 
 const Feed = ({ user }) => {
   const [modalPhoto, setModalPhoto] = React.useState(null);
@@ -41,7 +43,9 @@ const Feed = ({ user }) => {
       {modalPhoto && (
         <FeedModal setModalPhoto={setModalPhoto} photo={modalPhoto} />
       )}
-      <FeedPhotos setModalPhoto={setModalPhoto} />
+      {loading && <Loading />}
+      {error && <Error error={error} />}
+      {list.length > 0 && <FeedPhotos setModalPhoto={setModalPhoto} />}
     </div>
   );
 };
