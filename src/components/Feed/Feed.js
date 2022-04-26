@@ -3,7 +3,7 @@ import FeedModal from "./FeedModal";
 import FeedPhotos from "./FeedPhotos";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
-import { loadNewPhotos } from "../../store/feed";
+import { loadNewPhotos, resetFeedState } from "../../store/feed";
 import Loading from "../Helper/Loading";
 import Error from "../Helper/Error";
 
@@ -13,6 +13,7 @@ const Feed = ({ user }) => {
   const dispatch = useDispatch();
 
   React.useEffect(() => {
+    dispatch(resetFeedState());
     dispatch(loadNewPhotos({ user, total: 6 }));
   }, [dispatch, user]);
 
