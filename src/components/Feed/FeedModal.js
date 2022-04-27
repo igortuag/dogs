@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPhoto } from "../../store/photo";
 
 function FeedModal({ photo, setModalPhoto }) {
+  const { modal } = useSelector((state) => state.ui);
   const { data, loading, error } = useSelector((state) => state.photo);
   const dispatch = useDispatch();
 
@@ -19,6 +20,8 @@ function FeedModal({ photo, setModalPhoto }) {
       setModalPhoto(null);
     }
   }
+
+  if (!modal) return null;
 
   return (
     <div className={styles.modal} onClick={handleOutsideClick}>
