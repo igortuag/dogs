@@ -17,6 +17,10 @@ function FeedModal() {
     }
   }
 
+  React.useEffect(() => {
+    dispatch(closeModal());
+  }, [dispatch]);
+
   if (!modal) return null;
 
   return (
