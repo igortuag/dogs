@@ -3,8 +3,8 @@ import PhotoCommentsForm from "./PhotoCommentsForm";
 import styles from "./PhotoComments.module.css";
 import { useSelector } from "react-redux";
 
-function PhotoComments({ id, comments, single }) {
-  const [comments, setComments] = React.useState(comments);
+function PhotoComments({ id, single, comments: prevComments }) {
+  const [comments, setComments] = React.useState(prevComments);
   const commentsSection = React.useRef(null);
   const { data } = useSelector((state) => state.user);
 
