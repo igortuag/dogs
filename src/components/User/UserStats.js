@@ -1,7 +1,7 @@
 import React from "react";
 import { STATS_GET } from "../../api";
 
-import useFetch from "../../hooks/useFetch";
+import useFetch from "../../Hooks/useFetch";
 import Loading from "../../components/Helper/Loading";
 import Error from "../../components/Helper/Error";
 import Head from "../Helper/Head";
