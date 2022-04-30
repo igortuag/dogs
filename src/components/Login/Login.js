@@ -15,7 +15,7 @@ const Login = () => {
 
   if (loading) return <Loading />;
 
-  if (data) return <Navigate to="/user" />;
+  if (data?.nome) return <Navigate to="/user" />;
 
   return (
     <div className={styles.login}>
