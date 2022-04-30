@@ -23,7 +23,7 @@ const LoginForm = () => {
     e.preventDefault();
     if (userName.validate() && password.validate()) {
       dispatch(
-        userLogin({ userName: userName.value, password: password.value })
+        userLogin({ username: userName.value, password: password.value })
       );
     }
   }
