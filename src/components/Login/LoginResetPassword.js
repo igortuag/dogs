@@ -12,7 +12,7 @@ const LoginResetPassword = () => {
   const [login, setLogin] = React.useState("");
   const [key, setKey] = React.useState("");
   const password = useForm();
-  const { data, loading, error, request } = useFetch();
+  const { loading, error, request } = useFetch();
   const navigate = useNavigate();
 
   React.useEffect(() => {
