@@ -25,7 +25,7 @@ function PhotoComments({ id, single, comments: prevComments }) {
           </li>
         ))}
       </ul>
-      {data && (
+      {data.token && (
         <PhotoCommentsForm id={id} setComments={setComments} single={single} />
       )}
     </>
