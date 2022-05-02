@@ -16,7 +16,7 @@ function PhotoComments({ id, single, comments: prevComments }) {
     <>
       <ul
         ref={commentsSection}
-        className={`${styles.comment} ${single ? styles.single : ""}`}
+        className={`${styles.comments} ${single ? styles.single : ""}`}
       >
         {comments.map((comment) => (
           <li key={comment.comment_ID}>
@@ -25,7 +25,7 @@ function PhotoComments({ id, single, comments: prevComments }) {
           </li>
         ))}
       </ul>
-      {data && (
+      {data.token && (
         <PhotoCommentsForm id={id} setComments={setComments} single={single} />
       )}
     </>

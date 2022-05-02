@@ -92,8 +92,8 @@ export function COMMENT_POST(id, body) {
         "Content-Type": "application/json",
         Authorization: "Bearer " + window.localStorage.getItem("token"),
       },
+      body: JSON.stringify(body),
     },
-    body: JSON.stringify(body),
   };
 }
 
