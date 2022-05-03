@@ -30,9 +30,7 @@ function PhotoContent({ single }) {
           </h1>
           <ul className={styles.attributes}>
             <li>{photo.peso} kg</li>
-            <li>
-              {photo.idade} ano{photo.idade > 1 && "s"}
-            </li>
+            <li>{photo.idade} old</li>
           </ul>
         </div>
       </div>

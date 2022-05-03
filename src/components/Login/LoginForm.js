@@ -44,14 +44,14 @@ const LoginForm = () => {
         Perdeu a senha?
       </Link>
       <div className={styles.register}>
-        <h2 className={styles.subtitle}> Cadastro</h2>
-        <p>Aioda não possui conta? Cadastre-se no site</p>
+        <h2 className={styles.subtitle}> Sing Up</h2>
+        <p>Don't have an account yet? Register on the website</p>
         <Link className={styles.buttonCreate} to="/login/lost">
-          Cadastre-se
+          Register
         </Link>
       </div>
       <Link to="/login/register" className={stylesBtn.button}>
-        Cadastro
+        Register
       </Link>
     </section>
   );
