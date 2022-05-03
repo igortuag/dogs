@@ -47,7 +47,7 @@ const UserPost = () => {
         value={password}
         onChange={({ target }) => setPassword(target.value)}
       />
-      <button>Enviar</button>
+      <button>Send</button>
     </form>
   );
 };

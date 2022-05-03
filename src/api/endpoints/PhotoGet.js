@@ -22,7 +22,7 @@ const PhotoGet = () => {
         value={id}
         onChange={({ target }) => setId(target.value)}
       />
-      <button>Enviar</button>
+      <button>Send</button>
     </form>
   );
 };

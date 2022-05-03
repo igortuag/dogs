@@ -22,7 +22,7 @@ const Header = () => {
           </>
         ) : (
           <Link className={styles.login} to="/login">
-            Login / Criar
+            Login / Create
           </Link>
         )}
       </nav>

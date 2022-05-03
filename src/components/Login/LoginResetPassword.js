@@ -46,16 +46,16 @@ const LoginResetPassword = () => {
       <Head title="Reset a senha" />
       <form onSubmit={handleSubmit}>
         <Input
-          label="Nova Senha"
+          label="New password"
           type="password"
           name="password"
           {...password}
         />
-        <Button>Resetar</Button>
+        <Button>Reset</Button>
         {loading ? (
-          <Button disabled>Resetando...</Button>
+          <Button disabled>Resetting...</Button>
         ) : (
-          <Button type="submit">Resetar</Button>
+          <Button type="submit">Reset</Button>
         )}
       </form>
       <Error error={error} />

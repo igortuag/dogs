@@ -25,17 +25,17 @@ const LoginLostPassword = () => {
 
   return (
     <section className="animeLeft">
-      <Head title="Perdeu a senha?" />
-      <h1 className="title">Perdeu a senha?</h1>
+      <Head title="Lost your password?" />
+      <h1 className="title">Lost your password?</h1>
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>
       ) : (
         <form onSubmit={handleSubmit}>
           <Input label="Email / Usuário" type="text" name="email" {...login} />
           {loading ? (
-            <Button disabled>Enviando...</Button>
+            <Button disabled>Sending...</Button>
           ) : (
-            <Button type="submit">Enviar Email</Button>
+            <Button type="submit">Send email</Button>
           )}
         </form>
       )}

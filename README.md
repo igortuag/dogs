@@ -12,30 +12,32 @@
 
 </br>
 
-<h2>🔖 Descrição</h2>
-<p>🐕 Criação da aplicação Dogs, uma rede social para cachorros criada no curso de React da Origamid.</p>
-<p> Demonstração: https://tuag-dogs.netlify.app/ </p>
+<h2>🔖 Description</h2>
+<p>🐕 Creation of the Dogs application, a social network for dogs created in the React course by Origamid.</p>
+<p> Demo: https://tuag-dogs.netlify.app/ </p>
+
 </br>
 
-<h2>🚀 Tecnologias</h2>
+<h2>🚀 Technologies</h2>
 <ul>
-    <li><a href="https://create-react-app.dev/" target="_blank">React</a></li>
-    <li><a href="https://reactrouter.com/" target="_blank">React Router</a></li>
-    <li><a href="https://github.com/FormidableLabs/victory" target="_blank">Victory</a></li>
+     <li><a href="https://create-react-app.dev/" target="_blank">React</a></li>
+     <li><a href="https://reactrouter.com/" target="_blank">React Router</a></li>
+     <li><a href="https://github.com/FormidableLabs/victory" target="_blank">Victory</a></li>
+     <li><a href="https://redux.js.org/" target="_blank">Redux</a></li>
 </ul>
 
 <br>
 
-<h2>ℹ️ Como utilizar</h2>
+<h2>ℹ️ How to use</h2>
 
-    Clone esse repositório
-    $ git clone https://github.com/igortuag/dogs
+     clone this repository
+     $ git clone https://github.com/igortuag/dogs
 
-    Instalar dependências
-    $ yarn
+     install dependencies
+     $ yarn
 
-    Inicie o projeto
-    $ yarn start
+     start the project
+     $ yarn start
 
 <br>
-Feito com ❤️ por <a href="https://linkedin.com/in/igortuag" target="_blank">Igor Tuag</a></p>
+Made with ❤️ by <a href="https://linkedin.com/in/igortuag" target="_blank">Igor Tuag</a></p>

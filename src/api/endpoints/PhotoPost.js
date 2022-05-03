@@ -52,13 +52,13 @@ const PhotoPost = () => {
         onChange={({ target }) => setPeso(target.value)}
       />
       <input
-        placeholder="idade"
+        placeholder="age"
         type="text"
         value={idade}
         onChange={({ target }) => setIdade(target.value)}
       />
       <input type="file" onChange={({ target }) => setImg(target.files[0])} />
-      <button>Enviar</button>
+      <button>Send</button>
     </form>
   );
 };
